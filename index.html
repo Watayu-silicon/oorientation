@@ -69,6 +69,7 @@
       <div class="my-point"></div>
     </div>
     <button class="start-btn">Start compass</button>
+    <h2 class='notice'></h2>
   </body>
   <script>
     const compassCircle = document.querySelector(".compass-circle");
@@ -103,6 +104,8 @@
     function handler(e) {
       compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
       compassCircle.style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;
+      notice = document.querySelector(".notice");
+      notice.innerText = compass;
     }
     
     init();
